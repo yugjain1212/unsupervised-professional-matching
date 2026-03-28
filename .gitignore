@@ -1,0 +1,35 @@
+# Dataset — do not commit raw Kaggle data
+data/raw/
+data/processed/
+data/mappings/
+
+# Saved model artifacts
+outputs/models/
+outputs/clusters/
+
+# Numpy feature matrix
+*.npy
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,17 @@
+# Core data handling
+numpy==1.26.4
+pandas==2.2.2
+
+# Machine learning
+scikit-learn==1.4.2
+
+# Visualisation
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Notebook environment
+jupyter==1.0.0
+ipykernel==6.29.4
+
+# Utilities
+tqdm==4.66.4

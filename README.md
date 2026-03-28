@@ -186,17 +186,6 @@ Since no ground truth labels exist, evaluation is fully intrinsic:
 
 ---
 
-## Results (Week 11 — Baseline)
-
-> To be updated after notebook 03 is complete.
-
-- Optimal K: TBD
-- Silhouette Score: TBD
-- Davies-Bouldin Index: TBD
-- Cluster interpretations: TBD
-
----
-
 ## Roadmap
 
 | Week | Milestone | Status |
@@ -209,7 +198,8 @@ Since no ground truth labels exist, evaluation is fully intrinsic:
 
 ## Authors
 
-> Add your names and roll numbers here.
+Satvik Sharma
+Yug Jain
 
 ---
 

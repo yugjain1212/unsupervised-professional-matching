@@ -23,7 +23,6 @@ for _path in [
 PII_COLS = ["name", "email", "profile_id"]
 
 DROP_COLS = [
-    "current_company",  # too high cardinality, no generalizable signal
     "source",           # constant value ("synthetic") — zero variance
     "headline",         # free text, redundant with role + skills
     "about",            # generic boilerplate, low signal

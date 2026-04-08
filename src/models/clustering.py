@@ -34,11 +34,7 @@ def run_kmeans_experiment(X_pca: np.ndarray) -> pd.DataFrame:
 
 
 def plot_elbow_and_silhouette(results_df: pd.DataFrame) -> None:
-    """
-    Plot inertia (elbow curve) and silhouette score side by side.
-    Both plots saved to outputs/plots/.
-    """
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4))
+    fig, axes = plt.subplots(1, 2, figsize=(16, 4))  # wider figure for K=3..30
 
     # Elbow curve
     axes[0].plot(
@@ -47,7 +43,7 @@ def plot_elbow_and_silhouette(results_df: pd.DataFrame) -> None:
     axes[0].set_title("Elbow curve — inertia vs K", fontsize=13, fontweight="bold")
     axes[0].set_xlabel("Number of clusters (K)")
     axes[0].set_ylabel("Inertia")
-    axes[0].set_xticks(results_df["k"])
+    axes[0].set_xticks(results_df["k"][::2])  # every 2nd tick to avoid crowding
 
     # Silhouette scores
     best_k = results_df.loc[results_df["silhouette"].idxmax(), "k"]
@@ -60,20 +56,20 @@ def plot_elbow_and_silhouette(results_df: pd.DataFrame) -> None:
     )
     axes[1].set_xlabel("Number of clusters (K)")
     axes[1].set_ylabel("Silhouette score")
-    axes[1].set_xticks(results_df["k"])
+    axes[1].set_xticks(results_df["k"][::2])  # every 2nd tick
     axes[1].annotate(
         f"Best K={best_k}",
         xy=(best_k, results_df.loc[results_df["k"] == best_k, "silhouette"].values[0]),
-        xytext=(best_k + 0.3, results_df["silhouette"].max() * 0.97),
+        xytext=(best_k - 3, results_df["silhouette"].max() * 0.97),  # shifted left
         fontsize=9,
         color="#E8834E",
+        arrowprops=dict(arrowstyle="->", color="#E8834E"),
     )
 
     plt.tight_layout()
-    plt.savefig(os.path.join(PLOTS_DIR, "09_elbow_and_silhouette.png"))
+    plt.savefig(os.path.join(PLOTS_DIR, "09_elbow_and_silhouette.png"), dpi=150)
     plt.show()
     print(f"\nBest K by silhouette score: {int(best_k)}")
-
 
 def fit_final_kmeans(X_pca: np.ndarray, k: int) -> np.ndarray:
     """

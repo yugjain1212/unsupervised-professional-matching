@@ -46,4 +46,4 @@ REMOTE_MAP = {"onsite": 0, "hybrid": 1, "remote": 2}
 N_SKILLS = 100  # top N skills for multi-hot encoding
 N_TFIDF_TERMS = 50  # top N terms from TF-IDF on intent fields
 PCA_COMPONENTS = 30  # increased to retain more variance (target ~35-40%)
-K_RANGE = range(2, 31)  # test K from 2 to 20
+K_RANGE = range(2, 31)  # test K from 2 to 30

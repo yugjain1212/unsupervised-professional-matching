@@ -22,7 +22,7 @@ def run_kmeans_experiment(X_pca: np.ndarray) -> pd.DataFrame:
     print(f"Running K-Means for K = {K_RANGE.start} to {K_RANGE.stop - 1}...")
     for k in K_RANGE:
         km = KMeans(n_clusters=k, random_state=42, n_init=20, max_iter=500)
-        labels = km.fit_predict(X_pca)
+        labels = km.fit_predict(X_pca,15)
 
         inertia = km.inertia_
         sil = silhouette_score(X_pca, labels, sample_size=5000, random_state=42)
